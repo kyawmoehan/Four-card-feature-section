@@ -1,0 +1,139 @@
+:root{
+    --DarkBlue: hsl(234, 12%, 34%);
+    --GrayishBlue: hsl(229, 6%, 66%);
+    --LightGray: hsl(0, 0%, 98%);
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;    
+}
+
+.container {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+/* header */
+.header {
+    margin: 3rem 0;
+    text-align: center;
+}
+.title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--DarkBlue);   
+}
+.light {
+    font-weight: 400;
+    color: var(--GrayishBlue);
+}
+
+.parag {
+    font-size: 15px;
+    width: 50%;
+    margin: auto;
+}
+
+/* card */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.card{
+    border-radius: 5px;
+    padding: 1.5rem;
+    margin: 1rem;
+    box-shadow: 4px 4px 17px var(--GrayishBlue);
+}
+
+.card.red{
+    border-top: 5px solid var(--Red);
+    grid-area: 1/2/3/3;
+}
+.card.blue{
+    border-top: 5px solid var(--Blue);
+    grid-area: 2/3/4/4;
+    
+}
+.card.orange{
+    border-top: 5px solid var(--Orange);
+    grid-area: 3/2/5/3;
+}
+.card.cyan{
+    border-top: 5px solid var(--Cyan);
+    grid-area: 2/1/4/2;
+}
+
+.card h3{
+    font-weight: 600;
+    color: var(--DarkBlue);
+    margin-bottom: .5rem;
+}
+
+.card p{
+    font-weight: 200;
+    color: var(--DarkBlue);
+    margin-bottom: 0.5rem;
+}
+
+.card img{
+    display: inline-block;
+    padding: 1rem;
+    float: right;
+}
+/* footer */
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+    margin: 2rem 0 1rem 0;
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+/* responsive */
+@media (max-width: 465px) {
+    .container {
+        max-width: 90%;
+    }
+    .title {
+        font-size: 1.6rem;   
+    }
+    .parag {
+        width: 100%;
+        margin: auto;
+    }
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: 
+        "c"
+        "r"
+        "o"
+        "b";
+    }
+    .card.red{
+       grid-area: r;
+    }
+    .card.blue{
+       grid-area: b;
+    }
+    .card.orange{
+        grid-area: o;
+    }
+    .card.cyan{
+        grid-area: c;
+    }    
+}
